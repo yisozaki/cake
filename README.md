@@ -7,6 +7,9 @@
 git clone {this repos}
 cd cake
 
+# app configuration
+cp config/app.xx.php config/app.php
+
 # composer
 composer update
 
