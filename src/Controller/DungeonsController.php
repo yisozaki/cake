@@ -36,6 +36,11 @@ class DungeonsController extends AppController
         $dungeon = $this->Dungeons->get($id, [
             'contain' => ['Maps'],
         ]);
+//        $dungeon = $this->Dungeons->get($id, [
+//            'contain' => ['Maps' => function($query){
+//                return $query->select(['dungeion_id', 'coord']);
+//            }],
+//        ]);
 
         $this->set('dungeon', $dungeon);
         $this->set('_serialize', ['dungeon']);
