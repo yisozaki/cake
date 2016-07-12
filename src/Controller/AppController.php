@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\FrozenTime;
 
 /**
  * Application Controller
@@ -43,6 +44,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        FrozenTime::setJsonEncodeFormat('Y-MM-dd HH:mm:ss');
     }
 
     /**
