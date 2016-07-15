@@ -45,6 +45,14 @@ class DungeonsController extends AppController
 
 //        $dungeon['created'] = intval(Time::parse($dungeon['created'])->toUnixString());
         $dungeon['created'] = intval(Time::parse($dungeon['created'])->toUnixString());
+
+        $usersTable = TableRegistry::get('Users');
+
+        $userId = 1;
+        $user = $usersTable->get($userId);
+        $user = $user->set(['name' => sprintf('name:%s', time())]);
+        $usersTable->save($user);
+
         $this->set('dungeon', $dungeon);
         $this->set('_serialize', ['dungeon']);
     }
