@@ -44,7 +44,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        FrozenTime::setJsonEncodeFormat('Y-MM-dd HH:mm:ss');
+        FrozenTime::setJsonEncodeFormat('yyyy-MM-dd HH:mm:ss');
     }
 
     /**

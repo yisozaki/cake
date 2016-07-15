@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\I18n\Time;
 
 /**
  * Dungeons Controller
@@ -42,6 +43,8 @@ class DungeonsController extends AppController
 //            }],
 //        ]);
 
+//        $dungeon['created'] = intval(Time::parse($dungeon['created'])->toUnixString());
+        $dungeon['created'] = intval(Time::parse($dungeon['created'])->toUnixString());
         $this->set('dungeon', $dungeon);
         $this->set('_serialize', ['dungeon']);
     }
